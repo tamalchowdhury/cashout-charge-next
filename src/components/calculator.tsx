@@ -34,20 +34,35 @@ export default function Calculator({ service = "bkash" }) {
   return (
     <div className='my-4'>
       <form onSubmit={handleFormSubmit} className='flex gap-2'>
-        <input
-          className='block border w-full text-3xl p-2'
-          type='number'
-          name='amount'
-          onChange={(e) => setValue(e.target.value)}
-          value={value}
-          autoFocus
-        />
-        <button
-          className='block bg-accent rounded-md px-4 py-2 font-bold'
-          type='submit'
-        >
-          Calculate
-        </button>
+        <section className='relative'>
+          <input
+            className=' border w-full text-3xl p-2'
+            type='number'
+            name='amount'
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
+            autoFocus
+            tabIndex={1}
+          />
+          <button
+            className='absolute right-[10px] top-[8px] bg-[#efefef] hover:bg-[#ddd] transition rounded-full flex items-center justify-center h-[40px] w-[40px] text-[32px] 
+            leading-none
+            '
+            type='button'
+            tabIndex={3}
+          >
+            &times;
+          </button>
+        </section>
+        <section>
+          <button
+            className='block bg-accent rounded-md px-4 py-2 font-bold'
+            type='submit'
+            tabIndex={2}
+          >
+            Calculate
+          </button>
+        </section>
       </form>
     </div>
   )
