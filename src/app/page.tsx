@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Container from "@/components/container"
 import Link from "next/link"
 
 const items = [
@@ -22,13 +22,13 @@ const items = [
 
 export default function Home() {
   return (
-    <main className='h-full flex flex-col gap-4 '>
-      <section className='flex-1 bg-white p-4 min-h-[200px] rounded-md'>
-        <h1 className='mb-4'>Select a Service</h1>
+    <main className='h-full flex flex-col'>
+      <Container>
+        <p>Featured Services:</p>
         <div className='flex flex-wrap gap-4'>
           {items.map((item) => (
             <Link
-              className='flex items-center justify-center rounded-md basis-[48%] h-[100px] p-4 border'
+              className='flex items-center justify-center rounded-md basis-[47%] h-[100px] p-4 border'
               href={item.pathname}
               key={item.title}
             >
@@ -38,9 +38,9 @@ export default function Home() {
             </Link>
           ))}
         </div>
-      </section>
-      <section className='flex-1 bg-white p-2'>featured calculator</section>
-      <section className='flex-1 bg-white p-2'>news/updates etc</section>
+      </Container>
+      <Container>featured calculator</Container>
+      <Container>news section.</Container>
     </main>
   )
 }
