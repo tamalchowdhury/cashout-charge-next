@@ -24,12 +24,16 @@ export default function Calculator({ service = "bkash" }) {
     return fee.toFixed(2)
   }
 
+  const calculate = {
+    bkash: calculateBkashFee,
+  }
+
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const form = e.currentTarget
     const formData = new FormData(form)
     const amount = formData.get("amount") as string
-    const fee = calculateBkashFee(parseFloat(amount))
+    const fee = calculate[service](Number(amount))
     alert(fee)
   }
 

@@ -15,7 +15,7 @@ export default function BkashPage() {
       <Container>
         <H1>Bkash Cashout Calculator</H1>
         <p>Calculate bkash cashout charge</p>
-        <Calculator />
+        <Calculator service='bkash' />
       </Container>
     </>
   )
