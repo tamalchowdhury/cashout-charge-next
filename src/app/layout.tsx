@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`min-h-screen flex flex-col text-[#333] ${inter.className}`}>
+      <body
+        className={`min-h-screen flex flex-col text-[#333] ${inter.className} lg:w-[900px] lg:mx-auto`}
+      >
         <header className='header text-center bg-accent/70 p-2'>
           <Link href='/'>
             <h1 className='text-xl font-bold'>CashoutCharge.com</h1>
